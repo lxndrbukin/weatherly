@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --white: #fff;
+  --light-blue: #f2feff;
+  --blue: #92e1f1;
+  --standard-width: 800px;
+  --spacing-xs: 2px;
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-lg: 16px;
+  --spacing-xl: 32px;
+}
+
+/* BODY */
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* APP */
+.app {
+  height: 100vh;
+  background-image: linear-gradient(var(--light-blue), var(--blue));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--standard-width);
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: -0.05rem;
+}
+
+.header .github {
+  font-size: 2.3rem;
+  height: fit-content;
+  display: inline-block;
+}
+
+/* SEARCH BAR */
+.searchbar {
+  display: flex;
+  width: 100%;
+  max-width: var(--standard-width);
+  position: relative;
+}
+
+.searchbar input[name='search'] {
+  height: 40px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  padding: 0 calc(var(--spacing-xl) * 2);
+}
+
+.searchbar input[name='search']:focus {
+  outline: none;
+}
+
+.searchbar button {
+  background-color: transparent;
+  border: none;
+}
+
+.searchbar .search,
+.searchbar .geolocation {
+  position: absolute;
+  font-size: 1.4rem;
+  top: 7px;
+}
+
+.searchbar .search {
+  left: var(--spacing-md);
+}
+
+.searchbar .geolocation {
+  right: var(--spacing-md);
+}
+
+/* CURRENT WEATHER */
+.current-weather {
+  width: 100%;
+  max-width: var(--standard-width);
+  background-color: var(--white);
+  border-radius: 20px;
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
+}
+
+.current-weather-header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm);
+}
+
+.current-weather-header h4 {
+  margin: var(--spacing-sm);
+}
+
+.current-weather-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.current-weather-info .info-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-left .city-temp {
+  display: flex;
+}
+
+.current-weather-info .info-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.info-right .hwp {
+  width: 220px;
+  display: grid;
+  grid-template-columns: 35px 1fr 1fr;
+}
+
+.info-right .temps {
+  display: flex;
+  margin-bottom: var(--spacing-lg);
+}
+
+.info-right .temp {
+  display: grid;
+  width: 60px;
+  grid-template-columns: 20px 1fr;
+}
