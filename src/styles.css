@@ -4,12 +4,16 @@
   --white: #fff;
   --light-blue: #f2feff;
   --blue: #92e1f1;
+  --grey-blue: #306f8a;
+  --grey: #767f8d;
+  --light-grey: #a3b9d0;
   --standard-width: 800px;
   --spacing-xs: 2px;
   --spacing-sm: 4px;
   --spacing-md: 8px;
   --spacing-lg: 16px;
   --spacing-xl: 32px;
+  --shadow: 2px 2px 3px rgba(0, 0, 0, 0.12);
 }
 
 /* BODY */
@@ -36,6 +40,7 @@ body {
   align-items: center;
   width: 100%;
   max-width: var(--standard-width);
+  color: var(--grey-blue);
 }
 
 .logo {
@@ -58,12 +63,20 @@ body {
   position: relative;
 }
 
+.searchbar .search-input-form {
+  width: 100%;
+}
+
 .searchbar input[name='search'] {
   height: 40px;
   width: 100%;
   border-radius: 30px;
   border: none;
   padding: 0 calc(var(--spacing-xl) * 2);
+  box-sizing: border-box;
+  box-shadow: var(--shadow);
+  font-size: 1.3rem;
+  color: var(--grey-blue);
 }
 
 .searchbar input[name='search']:focus {
@@ -73,6 +86,8 @@ body {
 .searchbar button {
   background-color: transparent;
   border: none;
+  color: var(--grey-blue);
+  cursor: pointer;
 }
 
 .searchbar .search,
@@ -99,6 +114,7 @@ body {
   margin: var(--spacing-lg) 0;
   padding: var(--spacing-lg);
   box-sizing: border-box;
+  box-shadow: var(--shadow);
 }
 
 .current-weather-header {
@@ -109,6 +125,7 @@ body {
 
 .current-weather-header h4 {
   margin: var(--spacing-sm);
+  color: var(--grey);
 }
 
 .current-weather-info {
@@ -123,8 +140,29 @@ body {
   align-items: center;
 }
 
+.info-left .city-name {
+  font-size: 1.5rem;
+  color: var(--grey-blue);
+}
+
 .info-left .city-temp {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.city-temp .city-temp-value {
+  margin: 0;
+}
+
+.info-left .city-temp img {
+  width: 90px;
+  height: 90px;
+}
+
+.info-left .description {
+  text-transform: capitalize;
 }
 
 .current-weather-info .info-right {
@@ -132,6 +170,23 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.info-right {
+  color: var(--grey-blue);
+}
+
+.info-right .feel {
+  color: var(--grey-blue);
+  font-size: 1.2rem;
+}
+
+.info-right i {
+  color: var(--light-grey);
+}
+
+.info-right .value {
+  font-weight: bold;
 }
 
 .info-right .hwp {
