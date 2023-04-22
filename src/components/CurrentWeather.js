@@ -8,7 +8,7 @@ export default function CurrentWeather({ city, weather, hwp, sys }) {
     {
       name: 'Wind',
       icon: 'fa-solid fa-wind',
-      value: `${hwp.wind.speed}kph`,
+      value: `${hwp.wind.speed}m/s`,
     },
     {
       name: 'Pressure',
