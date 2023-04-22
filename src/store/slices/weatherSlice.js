@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getCurrentWeather } from '../thunks/getCurrentWeather';
+import { getCurrentWeatherByCoord } from '../thunks/getCurrentWeatherByCoord';
 
 const weatherSlice = createSlice({
   name: 'weather',
@@ -15,7 +16,12 @@ const weatherSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getCurrentWeather.fulfilled, (state, action) => {
-      state.current = action.payload;
+      state.current = action.payload.current;
+      state.forecast = action.payload.forecast;
+    });
+    builder.addCase(getCurrentWeatherByCoord.fulfilled, (state, action) => {
+      state.current = action.payload.current;
+      state.forecast = action.payload.forecast;
     });
   },
 });

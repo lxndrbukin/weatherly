@@ -9,3 +9,4 @@ export const store = configureStore({
 
 export * from './slices/weatherSlice';
 export * from './thunks/getCurrentWeather';
+export * from './thunks/getCurrentWeatherByCoord';

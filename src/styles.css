@@ -72,7 +72,7 @@ body {
   width: 100%;
   border-radius: 30px;
   border: none;
-  padding: 0 calc(var(--spacing-xl) * 2);
+  padding: 0 calc(var(--spacing-xl) * 1.5);
   box-sizing: border-box;
   box-shadow: var(--shadow);
   font-size: 1.3rem;
@@ -98,11 +98,11 @@ body {
 }
 
 .searchbar .search {
-  left: var(--spacing-md);
+  right: var(--spacing-md);
 }
 
 .searchbar .geolocation {
-  right: var(--spacing-md);
+  left: var(--spacing-md);
 }
 
 /* CURRENT WEATHER */
@@ -115,15 +115,15 @@ body {
   padding: var(--spacing-lg);
   box-sizing: border-box;
   box-shadow: var(--shadow);
+  animation-name: opacity;
+  animation-duration: 1.5s;
+  display: flex;
+  flex-direction: column;
 }
 
 .current-weather-header {
-  display: flex;
-  justify-content: space-between;
   padding: var(--spacing-sm);
-}
-
-.current-weather-header h4 {
+  font-size: 1.5rem;
   margin: var(--spacing-sm);
   color: var(--grey);
 }
@@ -141,7 +141,7 @@ body {
 }
 
 .info-left .city-name {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--grey-blue);
 }
 
@@ -154,6 +154,7 @@ body {
 
 .city-temp .city-temp-value {
   margin: 0;
+  color: var(--grey-blue);
 }
 
 .info-left .city-temp img {
@@ -163,6 +164,8 @@ body {
 
 .info-left .description {
   text-transform: capitalize;
+  font-size: 1.35rem;
+  color: var(--grey-blue);
 }
 
 .current-weather-info .info-right {
@@ -183,6 +186,7 @@ body {
 
 .info-right i {
   color: var(--light-grey);
+  align-self: center;
 }
 
 .info-right .value {
@@ -193,6 +197,7 @@ body {
   width: 220px;
   display: grid;
   grid-template-columns: 35px 1fr 1fr;
+  margin: var(--spacing-sm) 0;
 }
 
 .info-right .temps {
@@ -204,4 +209,59 @@ body {
   display: grid;
   width: 60px;
   grid-template-columns: 20px 1fr;
+}
+
+/* FORECAST */
+.forecast {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: var(--standard-width);
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
+  animation-name: opacity;
+  animation-duration: 1.5s;
+  color: var(--grey-blue);
+}
+
+.forecast-header {
+  padding: var(--spacing-sm);
+  font-size: 1.5rem;
+  margin: var(--spacing-sm);
+  color: var(--grey);
+}
+
+.forecast-days {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.forecast-days .day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.day img {
+  height: 90px;
+  width: 90px;
+}
+
+.day .desc {
+  text-transform: capitalize;
+}
+
+.day span {
+  font-weight: bold;
+}
+
+/* ANIMATIONS */
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
