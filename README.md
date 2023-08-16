@@ -6,4 +6,4 @@
 </ul>
 <p>The app provides weather data based off the name of the city/location provided or the geographical position using the <b>HTML Geolocation API</b>.</p>
 
-Visit <a href='https://lxndrbukin.github.io/weatherly/'>Weatherly</a>
+Visit <a target='_blank' href='https://lxndrbukin.github.io/weatherly/'>Weatherly</a>
